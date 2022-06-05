@@ -12,4 +12,9 @@
 // 对内存的操作是非常复杂的 [c/c++ 分配 释放]
 // cd /proc/sysvipc
 $key=ftok('demo37.php','x');
-echo $shm_id=shm_attach($key,128);//10 bytes =8 bit
+echo $shm_id=shm_attach($key,128);//1 bytes =8 bit
+//shmat 表示创建好的共享存储区域关联到 进程的地址空间
+//shm_id 对应自己的地址空间 [当前进程] 实际上是映射了内存地址
+echo shm_put_var($shm_id,1,"a");
+echo shm_get_var($shm_id,1);
+shm_remove($shm_id);

@@ -14,5 +14,5 @@
 
 $key=ftok("demo32.php","x");// 就是把文件与id 转换成一个key 根据inode
 $msqid=msg_get_queue($key);
-echo msg_send($msqid,1,"hello");
+//echo msg_send($msqid,1,"hello");
 echo $msqid;
