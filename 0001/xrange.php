@@ -5,7 +5,7 @@ function xrange() {
 
         $res=yield '函数内向外发';
 
-        echo '协程1   '.$i.$res.PHP_EOL;
+        echo '协程   '.$i.$res.PHP_EOL;
     }
 }
 $a=xrange();
